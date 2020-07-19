@@ -1,4 +1,4 @@
-ARG VERSION=0.4.6
+ARG VERSION=0.4.7
 
 FROM amd64/ubuntu:bionic
 ENV DEBIAN_FRONTEND noninteractive
