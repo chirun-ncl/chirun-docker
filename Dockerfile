@@ -1,4 +1,4 @@
-ARG VERSION=0.4.7-7
+ARG VERSION=0.4.7-12
 
 FROM amd64/ubuntu:bionic
 ENV DEBIAN_FRONTEND noninteractive
@@ -23,4 +23,6 @@ RUN python3 -m pip install pyppeteer
 RUN pyppeteer-install
 
 ARG VERSION
+ADD tex /usr/local/share/texmf/tex
+RUN texhash
 RUN python3 -m pip install git+https://github.com/coursebuilder-ncl/makecourse.git
