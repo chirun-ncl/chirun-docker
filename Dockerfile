@@ -30,4 +30,4 @@ RUN pyppeteer-install
 ARG VERSION
 ADD tex /usr/local/share/texmf/tex
 RUN texhash
-RUN python3 -m pip install git+https://github.com/coursebuilder-ncl/makecourse.git
+RUN python3 -m pip install git+https://github.com/chirun-ncl/chirun.git
