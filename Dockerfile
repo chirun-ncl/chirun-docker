@@ -1,4 +1,4 @@
-ARG VERSION=0.6.1-2
+ARG VERSION=0.6.3-4
 
 FROM amd64/ubuntu:focal
 ENV DEBIAN_FRONTEND noninteractive
