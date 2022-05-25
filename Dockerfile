@@ -23,8 +23,9 @@ ENV LANG en_GB.UTF-8
 ENV LANGUAGE en_GB:en
 ENV LC_ALL en_GB.UTF-8
 
-RUN python3 -m pip install pyppeteer PyPDF2 'Jinja2<=3.0.0' Markdown Pillow PyYAML \
-bs4 beautifulsoup4 jupyter-client nbconvert notedown
+RUN python3 -m pip install pyppeteer PyPDF2 Markdown Pillow PyYAML \
+bs4 beautifulsoup4 jupyter-client nbconvert notedown \
+'Jinja2<=3.0.0' 'Pygments<=2.11'
 RUN pyppeteer-install
 
 ARG VERSION
