@@ -1,4 +1,4 @@
-ARG VERSION=0.6.3-4
+ARG VERSION=0.7.0-2
 
 FROM amd64/ubuntu:focal
 ENV DEBIAN_FRONTEND noninteractive
@@ -23,7 +23,7 @@ ENV LANG en_GB.UTF-8
 ENV LANGUAGE en_GB:en
 ENV LC_ALL en_GB.UTF-8
 
-RUN python3 -m pip install pyppeteer PyPDF2 Jinja2 Markdown Pillow PyYAML \
+RUN python3 -m pip install pyppeteer PyPDF2 'Jinja2<=3.0.0' Markdown Pillow PyYAML \
 bs4 beautifulsoup4 jupyter-client nbconvert notedown
 RUN pyppeteer-install
 
