@@ -1,5 +1,3 @@
-ARG VERSION=0.8.0
-
 FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
@@ -28,8 +26,10 @@ RUN python3 -m pip install pyppeteer PyPDF2 Markdown Pillow PyYAML \
 bs4 beautifulsoup4 jupyter-client nbconvert notedown \
 'Jinja2<=3.0.0' 'Pygments<=2.11'
 
+RUN apt-get install -y texlive-full
+
 ARG VERSION
 ADD tex /usr/local/share/texmf/tex
 RUN texhash
-RUN python3 -m pip install git+https://github.com/chirun-ncl/chirun.git
+RUN python3 -m pip install git+https://github.com/chirun-ncl/chirun.git@$VERSION
 RUN pyppeteer-install
