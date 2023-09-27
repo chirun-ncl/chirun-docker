@@ -28,8 +28,10 @@ bs4 beautifulsoup4 jupyter-client nbconvert notedown \
 
 RUN apt-get install -y texlive-full
 
-ARG VERSION
 ADD tex /usr/local/share/texmf/tex
 RUN texhash
-RUN python3 -m pip install git+https://github.com/chirun-ncl/chirun.git@$VERSION
+ENV PYPPETEER_CHROMIUM_REVISION 1181205
 RUN pyppeteer-install
+
+ARG VERSION
+RUN python3 -m pip install git+https://github.com/chirun-ncl/chirun.git@$VERSION
